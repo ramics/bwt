@@ -5,6 +5,7 @@
 #include <string>
 #include <iostream>
 #include <tuple>
+#include <algorithm>
 
 class LexicalSorter {
 public:
@@ -50,7 +51,7 @@ public:
             bw_locations[it - pointers.begin()] = *it - input_chars;
         } 
 
-        return std::tie(bw_string, bw_locations);
+        return std::make_pair(bw_string, bw_locations);
     }
 };
 
